@@ -26,7 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=split2,random
 
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
-ml = st.radio("Choose your Machine Learning Model :",('Decision Tree', 'Random Forest', 'Logistic Regression'))
+ml = st.selectbox("Choose your Machine Learning Model :",('Decision Tree', 'Random Forest', 'Logistic Regression'))
 
 if ml == 'Decision Tree':
   from sklearn.tree import DecisionTreeClassifier
