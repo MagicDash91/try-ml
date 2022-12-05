@@ -14,7 +14,7 @@ st.dataframe(df)
 X = df.drop('output', axis=1)
 y = df['output']
 
-split = st.slider('Choose the test size', 1, 99, 10)
+split = st.sidebar.slider('Choose the test size', 1, 99, 10)
 splittrain = 100 - split
 split2 = split/100
 
@@ -26,7 +26,7 @@ X_train, X_test, y_train, y_test = train_test_split(X,y, test_size=split2,random
 
 from sklearn.metrics import accuracy_score, f1_score, precision_score, recall_score
 
-ml = st.selectbox("Choose your Machine Learning Model :",('Decision Tree', 'Random Forest', 'Logistic Regression'))
+ml = st.sidebar.selectbox("Choose your Machine Learning Model :",('Decision Tree', 'Random Forest', 'Logistic Regression'))
 
 if ml == 'Decision Tree':
   from sklearn.tree import DecisionTreeClassifier
